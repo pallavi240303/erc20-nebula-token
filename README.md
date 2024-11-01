@@ -1,8 +1,8 @@
 
 -------------------------------------------------------------
-#Nebula Token - (NBT)
+#Nebulite Token - (NBL)
 
-NebulaToken Contract address : 0xD00Fc7BABDa872B2663F9Ab8672471C6c422027C
+Nebulite Contract address : 0xc6c0370b7821945E96cCc2d6ac76347BD5CA3049
 -------------------------------------------------------------
 view on sepolia.etherscan.com
 
