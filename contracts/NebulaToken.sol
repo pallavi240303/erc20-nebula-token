@@ -21,7 +21,7 @@ contract NebulaToken is ERC20Capped, ERC20Burnable {
     address payable public owner;
     uint256 public blockReward;
 
-    constructor(uint256 cap , uint256 reward) ERC20("NebulaToken" , "NBT") ERC20Capped(cap * (10 ** decimals())){
+    constructor(uint256 cap , uint256 reward) ERC20("Nebulite" , "NBL") ERC20Capped(cap * (10 ** decimals())){
         owner  = payable(msg.sender);
         _mint(owner, 7000000 * (10 ** decimals())); //minting : creating a new token and assigning them to a specific address
         blockReward = reward * (10 ** decimals());
