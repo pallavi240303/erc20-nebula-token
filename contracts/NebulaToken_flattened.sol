@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+
 // File: @openzeppelin/contracts/token/ERC20/IERC20.sol
 
 
@@ -717,7 +717,7 @@ abstract contract ERC20Burnable is Context, ERC20 {
     }
 }
 
-// File: contracts/NebulaToken.sol
+// File: contracts/2_Owner.sol
 
 //contracts/NebulaToken.sol
 
@@ -750,6 +750,10 @@ contract NebulaToken is ERC20Capped, ERC20Burnable {
     modifier OnlyOwner {
         require(msg.sender == owner , "Only the owner can call this function");
         _;
+    }
+
+    function mint(address to, uint256 amount) public OnlyOwner {
+        _mint(to, amount);
     }
 
     function _mintMinerReward() internal {
