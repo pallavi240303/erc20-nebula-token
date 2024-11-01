@@ -8,7 +8,7 @@ Token design :
 3. make token burnable : [Done]
 burning enables users or the contract owner to "burn" (destroy) a specified amount of tokens they own.
 burning the tokens reduces the total supply, making the remaining tokens more valuable by increasing scarcity.
-4. create block reward to distribute new supply to miners - blockReward , _minMinerReward [Done]
+4. create block reward to distribute new supply to miners - blockReward , _beforeTokenTransfer , _minMinerReward [Done]
  */
 
 pragma solidity ^0.8.27;
@@ -30,6 +30,10 @@ contract NebulaToken is ERC20Capped, ERC20Burnable {
     modifier OnlyOwner {
         require(msg.sender == owner , "Only the owner can call this function");
         _;
+    }
+
+    function mint(address to, uint256 amount) public OnlyOwner {
+        _mint(to, amount);
     }
 
     function _mintMinerReward() internal {
